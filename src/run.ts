@@ -1,19 +1,71 @@
-import { createSpriteInstance, playAudioSource } from "pixel-pigeon";
+import { createSprite, playAudioSource } from "pixel-pigeon";
 import { musicVolumeChannelID } from "./volumeChannels";
-import { pigeonSpriteID } from "./sprites";
 
 export const run = (): void => {
   console.log("run");
   playAudioSource("song", {
     volumeChannelID: musicVolumeChannelID,
   });
-  const pigeonSpriteInstanceID: string = createSpriteInstance({
+  createSprite({
+    animationID: (): string => "idle-down",
+    animations: [
+      {
+        frames: [
+          {
+            height: 32,
+            sourceHeight: 32,
+            sourceWidth: 32,
+            sourceX: 32,
+            sourceY: 0,
+            width: 32,
+          },
+        ],
+        id: "idle-down",
+      },
+      {
+        frames: [
+          {
+            height: 32,
+            sourceHeight: 32,
+            sourceWidth: 32,
+            sourceX: 32,
+            sourceY: 32,
+            width: 32,
+          },
+        ],
+        id: "idle-left",
+      },
+      {
+        frames: [
+          {
+            height: 32,
+            sourceHeight: 32,
+            sourceWidth: 32,
+            sourceX: 32,
+            sourceY: 64,
+            width: 32,
+          },
+        ],
+        id: "idle-right",
+      },
+      {
+        frames: [
+          {
+            height: 32,
+            sourceHeight: 32,
+            sourceWidth: 32,
+            sourceX: 32,
+            sourceY: 96,
+            width: 32,
+          },
+        ],
+        id: "idle-up",
+      },
+    ],
     coordinates: {
       x: 32,
       y: 32,
     },
-    getAnimationID: (): string => "idle-down",
-    spriteID: pigeonSpriteID,
+    imagePath: "pigeon",
   });
-  console.log(`created pigeon sprite: ${pigeonSpriteInstanceID}`);
 };
