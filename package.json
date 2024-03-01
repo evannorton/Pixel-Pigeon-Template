@@ -2,10 +2,10 @@
     "name": "lair-of-the-moon-squid",
     "scripts": {
         "dev": "pigeon dev",
-        "fixPNG": "pigeon fixPNG",
         "id": "pigeon id",
         "lint": "pigeon lint",
         "lint:fix": "pigeon lint:fix",
+        "png": "pigeon png",
         "xD": "pigeon xD",
         "zip": "pigeon zip"
     },
