@@ -31,7 +31,6 @@ const validIDCharacters: string[] = [
   "x",
   "y",
   "z",
-  "Z",
   "1",
   "2",
   "3",
