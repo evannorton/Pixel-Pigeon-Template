@@ -41,3 +41,6 @@ jobs:
     - name: Build
       run:
         npm run zip
+      env:
+        GITHUB_ENV_VARS: ${{ toJSON(vars) }}
+        PP_ENV: ${{ vars.PP_ENV }}
